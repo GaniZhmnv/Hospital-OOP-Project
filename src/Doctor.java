@@ -23,32 +23,44 @@ public class Doctor {
         return doctorId;
     }
 
-    public void setDoctorId(int doctorId) {
+    public void setDoctorId(int doctorId) {if (doctorId >= 0) {
         this.doctorId = doctorId;
+    } else {
+        System.out.println("Warning: Id cannot be negative! Setting to 0.");
+        this.doctorId = 0;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String name) {if (name != null && !name.trim().isEmpty()) {
+            this.name = name;
+        } else {
+            System.out.println("Warning: Name cannot be empty!");
+        }
     }
 
     public String getSpecialization() {
         return specialization;
     }
 
-    public void setSpecialization(String specialization) {
-        this.specialization = specialization;
+    public void setSpecialization(String specialization) {if (specialization != null && !specialization.trim().isEmpty()) {
+            this.specialization = specialization;
+        } else {
+            System.out.println("Warning: Specialization cannot be empty!");
+        }
     }
 
     public int getExperienceYears() {
         return experienceYears;
     }
 
-    public void setExperienceYears(int experienceYears) {
-        this.experienceYears = experienceYears;
+    public void setExperienceYears(int experienceYears) {if (experienceYears >= 0) {
+            this.experienceYears = experienceYears;
+        } else {
+            System.out.println("Warning: Experience years cannot be negative! Setting to 0.");
+            this.experienceYears = 0;
     }
 
     public boolean isExperienced() {
