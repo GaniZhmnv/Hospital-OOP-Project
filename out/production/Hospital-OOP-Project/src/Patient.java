@@ -6,7 +6,7 @@ public class Patient {
     private String bloodType;
     private String diagnosis;
 
-    public Patient(int patientId, String fullName, int age, String bloodType) {
+    public Patient(int patientId, String fullName, int age, String bloodType, String diagnosis) {
         this.patientId = patientId;
         this.fullName = fullName;
         this.age = age;

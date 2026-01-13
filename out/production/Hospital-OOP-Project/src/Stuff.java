@@ -1,33 +1,37 @@
-public class Doctor {
+public class Stuff {
 
-    private int doctorId;
-    private String name;
-    private String specialization;
-    private int experienceYears;
+    protected int stuffId;
+    protected String name;
+    protected String specialization;
+    protected int experienceYears;
+    protected double salary;
 
-    public Doctor(int doctorId, String name, String specialization, int experienceYears) {
-        this.doctorId = doctorId;
+    public Stuff(int stuffId, String name, String specialization, int experienceYears, double salary) {
+        this.stuffId = stuffId;
         this.name = name;
         this.specialization = specialization;
         this.experienceYears = experienceYears;
+        this.salary = salary;
     }
 
-    public Doctor() {
-        this.doctorId = 0;
+    public Stuff() {
+        this.stuffId = 0;
         this.name = "Unknown";
         this.specialization = "General";
         this.experienceYears = 0;
+        this.salary = 0;
     }
 
-    public int getDoctorId() {
-        return doctorId;
+    public int getStuffId() {
+        return stuffId;
     }
 
-    public void setDoctorId(int doctorId) {if (doctorId >= 0) {
-        this.doctorId = doctorId;
+    public void setStuffId(int doctorId) {if (doctorId >= 0) {
+        this.stuffId = doctorId;
     } else {
         System.out.println("Warning: Id cannot be negative! Setting to 0.");
-        this.doctorId = 0;
+        this.stuffId = 0;
+        }
     }
 
     public String getName() {
@@ -56,26 +60,47 @@ public class Doctor {
         return experienceYears;
     }
 
-    public void setExperienceYears(int experienceYears) {if (experienceYears >= 0) {
+    public void setExperienceYears(int experienceYears) {
+        if (experienceYears >= 0) {
             this.experienceYears = experienceYears;
         } else {
             System.out.println("Warning: Experience years cannot be negative! Setting to 0.");
             this.experienceYears = 0;
+        }
     }
+        public void setSalary ( double salary){
+            if (salary >= 0) {
+                this.salary = experienceYears;
+            } else {
+                System.out.println("Warning: Salary cannot be negative! Setting to 0.");
+                this.salary = 0;
+            }
+        }
 
+    public double getSalary() { return salary; }
     public boolean isExperienced() {
         return experienceYears >= 10;
     }
 
-    public boolean canPerformSurgery() {
+    public boolean mildlyExperienced() {
         return experienceYears >= 5;
+    }
+
+    public void work() {
+        System.out.println(name + " is working.");
+    }
+    public String getRole() {
+        return " Stuff Member";
     }
 
     @Override
     public String toString() {
-        return "Doctor{doctorId=" + doctorId +
-                ", name='" + name + '\'' +
+        return "Stuff{stuffId=" + stuffId +
+                ", name=' " + name + '\'' +
+                getRole() +
                 ", specialization='" + specialization + '\'' +
-                ", experienceYears=" + experienceYears + '}';
+                ", experienceYears=" + experienceYears +
+                ", salary=" + salary +
+                '}';
     }
 }
