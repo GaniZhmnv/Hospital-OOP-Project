@@ -6,10 +6,10 @@ public class Medicine {
     private boolean prescriptionRequired;
 
     public Medicine(int medicineId, String name, double price, boolean prescriptionRequired) {
-        this.medicineId = medicineId;
-        this.name = name;
-        this.price = price;
-        this.prescriptionRequired = prescriptionRequired;
+        setMedicineId(medicineId);
+        setName(name);
+        setPrice(price);
+        setPrescriptionRequired(prescriptionRequired);
     }
 
     public Medicine() {

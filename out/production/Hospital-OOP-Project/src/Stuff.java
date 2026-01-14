@@ -7,11 +7,11 @@ public class Stuff {
     protected double salary;
 
     public Stuff(int stuffId, String name, String specialization, int experienceYears, double salary) {
-        this.stuffId = stuffId;
-        this.name = name;
-        this.specialization = specialization;
-        this.experienceYears = experienceYears;
-        this.salary = salary;
+        setStuffId(stuffId);
+        setName(name);
+        setSpecialization(specialization);
+        setExperienceYears(experienceYears);
+        setSalary(salary);
     }
 
     public Stuff() {
@@ -70,7 +70,7 @@ public class Stuff {
     }
         public void setSalary ( double salary){
             if (salary >= 0) {
-                this.salary = experienceYears;
+                this.salary = salary;
             } else {
                 System.out.println("Warning: Salary cannot be negative! Setting to 0.");
                 this.salary = 0;
