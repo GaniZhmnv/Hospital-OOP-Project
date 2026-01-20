@@ -1,4 +1,6 @@
-public class Stuff {
+package model;
+
+public abstract class Stuff {
 
     protected int stuffId;
     protected String name;
@@ -86,16 +88,12 @@ public class Stuff {
         return experienceYears >= 5;
     }
 
-    public void work() {
-        System.out.println(name + " is working.");
-    }
-    public String getRole() {
-        return " Stuff Member";
-    }
+    public abstract void work();
+    public abstract String getRole();
 
     @Override
     public String toString() {
-        return "Stuff{stuffId=" + stuffId +
+        return "Stuff: stuffId=" + stuffId +
                 ", name=' " + name + '\'' +
                 getRole() +
                 ", specialization='" + specialization + '\'' +

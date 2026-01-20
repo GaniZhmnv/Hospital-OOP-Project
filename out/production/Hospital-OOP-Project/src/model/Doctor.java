@@ -1,4 +1,6 @@
-public class Doctor extends Stuff {
+package model;
+
+public class Doctor extends Stuff implements Treatable{
     private String department;
     private int patientsPerDay;
 
@@ -43,10 +45,10 @@ public class Doctor extends Stuff {
         return "Doctor";
     }
 
-
-    public void treatPatient(String patientName) {
+    @Override
+    public void treatPatient() {
         System.out.println("Doctor " + name +
-                " is treating patient: " + patientName);
+                " is treating a patient.");
     }
 
     public boolean isSeniorDoctor() {

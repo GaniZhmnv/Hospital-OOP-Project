@@ -1,3 +1,5 @@
+package model;
+
 public class Nurse extends Stuff {
 
     private String shift;
@@ -29,6 +31,9 @@ public class Nurse extends Stuff {
     public void setAssistedDoctors(int assistedDoctors) {
         if (assistedDoctors >= 0) {
             this.assistedDoctors = assistedDoctors;
+        } else {
+            System.out.println("Warning. This number can't be negative! Setting to zero");
+                    this.assistedDoctors = 0;
         }
     }
 

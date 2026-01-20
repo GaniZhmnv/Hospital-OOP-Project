@@ -1,3 +1,5 @@
+package model;
+
 public class Medicine {
 
     private int medicineId;
@@ -78,7 +80,7 @@ public class Medicine {
 
         @Override
         public String toString () {
-            return "Medicine{medicineId=" + medicineId +
+            return "Medicine: medicineId=" + medicineId +
                     ", name='" + name + '\'' +
                     ", price=" + price +
                     ", prescriptionRequired=" + prescriptionRequired + '}';
