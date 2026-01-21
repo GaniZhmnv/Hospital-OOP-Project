@@ -49,11 +49,6 @@ public class HMenu implements Menu {
                 case 0 -> running = false;
                 default -> System.out.println("Invalid choice");
             }
-
-            if (running) {
-                System.out.println("\nPress Enter to continue...");
-                scanner.nextLine();
-            }
         }
     }
 
@@ -171,7 +166,12 @@ public class HMenu implements Menu {
         boolean req = scanner.nextBoolean();
         scanner.nextLine();
 
-        medicines.add(new Medicine(id, name, price, req));
+        try {
+            medicines.add(new Medicine(id, name, price, req));
+            System.out.println("Medicine added successfully.");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 
     private void viewAllMedicine() {

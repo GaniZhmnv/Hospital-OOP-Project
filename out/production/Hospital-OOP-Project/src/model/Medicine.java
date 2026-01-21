@@ -51,12 +51,10 @@ public class Medicine {
     }
 
     public void setPrice(double price) {
-        if (price > 0) {
-            this.price = price;
-        } else {
-            System.out.println("Warning: Price cannot be negative or equal to 0! Setting to 1.");
-            this.price = 1.0;
+        if (price < 0) {
+            throw new IllegalArgumentException("Price cannot be negative: " + price);
         }
+        this.price = price;
     }
         public boolean isPrescriptionRequired () {
             return prescriptionRequired;
@@ -86,3 +84,4 @@ public class Medicine {
                     ", prescriptionRequired=" + prescriptionRequired + '}';
         }
     }
+
