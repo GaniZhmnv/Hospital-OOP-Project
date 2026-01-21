@@ -23,6 +23,9 @@ public class HMenu implements Menu {
         medicines.add(new Medicine(101, "Paracetamol", 4500, false));
         medicines.add(new Medicine(102, "Zodak", 3000, true));
         medicines.add(new Medicine(103, "Ibuprofen", 4000, false));
+
+        stuffs.add(new Doctor(11, "Gani", "Venerology", 11, 2300, "Urology", 23 ));
+        stuffs.add(new Nurse(11, "Alikhan", "Venerology", 4, 600, "day", 23 ));
     }
 
     @Override
@@ -54,20 +57,6 @@ public class HMenu implements Menu {
         }
     }
 
-    @Override
-    public void displayMenu() {
-        System.out.println("HOSPITAL MANAGEMENT SYSTEM");
-        System.out.println("1. Add Patient");
-        System.out.println("2. View All Patients");
-        System.out.println("3. Add Doctor");
-        System.out.println("4. Add Nurse");
-        System.out.println("5. View All Staff");
-        System.out.println("6. Make All Staff Work");
-        System.out.println("7. Add Medicine");
-        System.out.println("8. View All Medicine");
-        System.out.println("0. Exit");
-        System.out.print("Enter choice: ");
-    }
 
     private void addPatient() {
         System.out.print("ID: ");
@@ -190,4 +179,19 @@ public class HMenu implements Menu {
             System.out.println(m);
         }
     }
+    @Override
+    public void displayMenu() {
+        System.out.println("HOSPITAL MANAGEMENT SYSTEM");
+        System.out.println("1. Add Patient");
+        System.out.println("2. View All Patients");
+        System.out.println("3. Add Doctor");
+        System.out.println("4. Add Nurse");
+        System.out.println("5. View All Staff");
+        System.out.println("6. Make All Staff Work");
+        System.out.println("7. Add Medicine");
+        System.out.println("8. View All Medicine");
+        System.out.println("0. Exit");
+        System.out.print("Enter choice: ");
+    }
+
 }
