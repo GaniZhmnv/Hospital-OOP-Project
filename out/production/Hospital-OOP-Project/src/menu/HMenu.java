@@ -1,5 +1,6 @@
 package menu;
 
+import exception.InvalidInputException;
 import model.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -151,28 +152,33 @@ public class HMenu implements Menu {
     }
 
     private void addMedicine() {
-        System.out.print("ID: ");
-        int id = scanner.nextInt();
-        scanner.nextLine();
-
-        System.out.print("Name: ");
-        String name = scanner.nextLine();
-
-        System.out.print("Price: ");
-        double price = scanner.nextDouble();
-        scanner.nextLine();
-
-        System.out.print("Prescription required (true/false): ");
-        boolean req = scanner.nextBoolean();
-        scanner.nextLine();
-
         try {
-            medicines.add(new Medicine(id, name, price, req));
-            System.out.println("Medicine added successfully.");
-        } catch (IllegalArgumentException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.print("Id: ");
+            int medicineId = scanner.nextInt();
+            scanner.nextLine();
+
+            System.out.print("Name: ");
+            String name = scanner.nextLine();
+
+            System.out.print("Price: ");
+            int price = scanner.nextInt();
+            scanner.nextLine();
+
+            if (price < 0) {
+                throw new InvalidInputException("Price cannot be negative: " + price);
+            }
+
+            System.out.print("Is prescription required (true/false): ");
+            boolean req = scanner.nextBoolean();
+
+            medicines.add(new Medicine(medicineId, name, price, req));
+            System.out.println("Medicine added.");
+
+        } catch (InvalidInputException e) {
+            System.out.println("Warning: " + e.getMessage());
         }
     }
+
 
     private void viewAllMedicine() {
         for (Medicine m : medicines) {
